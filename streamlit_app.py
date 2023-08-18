@@ -7,8 +7,8 @@ import toml
 config = toml.load("config.toml")
 
 # Extract the API key from the configuration
-deepL_api_key = config["deepL"]["deepl_api_key"]
-
+deepl_api_key = config["deepL"]["deepl_api_key"]
+print(deepl_api_key)
 # Define the translation function
 
 
@@ -16,7 +16,7 @@ def translate_with_deepL(text: str):
     url = "https://api-free.deepl.com/v2/translate"
     payload = {"text": text, "target_lang": "KO"}
     headers = {
-        "Authorization": f"DeepL-Auth-Key {deepL_api_key}",
+        "Authorization": f"DeepL-Auth-Key {deepl_api_key}",
         "User-Agent": "YourApp/1.2.3",
         "Content-Type": "application/x-www-form-urlencoded",
     }
