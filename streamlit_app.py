@@ -1,14 +1,12 @@
 import streamlit as st
 import requests
 import json
-import toml
 
 # Load configuration from TOML file
-config = toml.load("config.toml")
 
 # Extract the API key from the configuration
-deepl_api_key = config["deepL"]["deepl_api_key"]
-print(deepl_api_key)
+deepl_api_key = st.secrets.deepL.deepl_api_key
+
 # Define the translation function
 
 
